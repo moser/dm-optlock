@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/lib/dm-optlock'
 # Generate all the Rake tasks
 # Run 'rake -T' to see list of generated tasks (from gem root directory)
 $hoe = Hoe.new('dm-optlock', DataMapper::DmOptlock::VERSION) do |p|
-  p.developer('FIXME full name', 'FIXME email')
+  p.developer('Martin Vielsmaier', 'martin.vielsmaier@gmail.com')
   p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
   p.rubyforge_name       = p.name # TODO this is default value
   p.extra_deps         = [

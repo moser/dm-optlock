@@ -10,7 +10,7 @@ module DataMapper
   end
   
   module DmOptlock
-    VERSION = '0.1.3'
+    VERSION = '0.1.4'
     DEFAULT_LOCKING_COLUMN = :lock_version
    
     def self.included(base) #:nodoc:
