@@ -1,19 +1,19 @@
+$:.unshift(File.dirname(__FILE__)) unless
+  $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
+  
 require 'rubygems'
-
 gem 'dm-core', '>=0.9.5'
 require 'dm-core'
 
 module DataMapper
-  # Raised when the row represented by the object which is to be saved was updated in meantime.
   class StaleObjectError < StandardError
   end
   
-  # Enables optimistic row locking in DM.
-  module OptLock
+  module DmOptlock
+    VERSION = '0.1.3'
     DEFAULT_LOCKING_COLUMN = :lock_version
    
-    # hmm...
-    def self.included(base)
+    def self.included(base) #:nodoc:
       base.extend ClassMethods
       base.before :save, :check_lock_version
     end
@@ -52,6 +52,6 @@ module DataMapper
         end
     end
   end
-
-  Resource::append_inclusions OptLock
+  
+  Resource::append_inclusions DmOptlock
 end

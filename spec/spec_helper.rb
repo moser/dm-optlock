@@ -1,8 +1,14 @@
-require 'rubygems'
-gem 'rspec', '>=1.1.3'
-require 'spec'
-require 'pathname'
-require Pathname(__FILE__).dirname.parent.expand_path + 'lib/dm-optlock'
+#:nodoc:
+begin
+  require 'spec'
+rescue LoadError
+  require 'rubygems'
+  gem 'rspec'
+  require 'spec'
+end
+
+$:.unshift(File.dirname(__FILE__) + '/../lib')
+require 'dm-optlock'
 
 def load_driver(name, default_uri)
   return false if ENV['ADAPTER'] != name.to_s
