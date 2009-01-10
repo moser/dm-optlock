@@ -3,9 +3,6 @@ Manifest.txt
 README.rdoc
 Rakefile
 lib/dm-optlock.rb
-script/console
-script/destroy
-script/generate
 spec/dm-optlock_spec.rb
 spec/spec.opts
 spec/spec_helper.rb
