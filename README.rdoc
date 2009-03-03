@@ -1,10 +1,6 @@
 = dm-optlock
 Adds optimistic locking to Datamapper.
 
-== FEATURES/PROBLEMS:
-
-* FIX (list of features or problems)
-
 == REQUIREMENTS:
 
 * dm-core >= 0.9.5
