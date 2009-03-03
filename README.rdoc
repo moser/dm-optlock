@@ -1,6 +1,15 @@
 = dm-optlock
 Adds optimistic locking to Datamapper.
 
+== Usage:
+  class Model
+    include DataMapper::Resource
+    ...
+    add_locking_column :my_version_col
+  end
+
+add_locking_column takes a options hash just like DataMapper’s property method does.
+
 == REQUIREMENTS:
 
 * dm-core >= 0.9.5
