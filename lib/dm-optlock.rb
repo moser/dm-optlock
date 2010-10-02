@@ -53,5 +53,5 @@ module DataMapper
     end
   end
   
-  Resource::append_inclusions DmOptlock
+  Model::append_inclusions DmOptlock
 end
