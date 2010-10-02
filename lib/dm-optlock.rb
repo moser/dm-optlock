@@ -21,7 +21,7 @@ module DataMapper
     private
     # Checks if the row has been changed since being loaded from the database.
     def check_lock_version
-      if !new_record? && dirty? && respond_to?(self.class.locking_column.to_s)
+      if !new? && dirty? && self.class.locking_column && respond_to?(self.class.locking_column.to_s)
         if original_values.include?(:id)
           row = self.class.get(original_values[:id]) 
         else
